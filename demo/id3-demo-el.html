@@ -1,0 +1,46 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../jouley-song-loader-behavior.html">
+
+<dom-module id="id3-demo-el">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <p>
+      Artist: <span>[[currentSong.artist]]</span>
+    </p>
+    <p>
+      Title: <span>[[currentSong.title]]</span>
+    </p>
+    <p>
+      Album: <span>[[currentSong.album]]</span>
+    </p>
+    <p>
+      Year: <span>[[currentSong.year]]</span>
+    </p>
+  </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'id3-demo-el',
+        behaviors: [Jouley.SongLoaderBehavior],
+
+        properties: {
+          file: {
+            type: Object,
+            observer: '_fileChanged'
+          }
+        },
+
+        _fileChanged: function(file) {
+          this.getID3Tags(file);
+        }
+      });
+    })();
+  </script>
+</dom-module>
