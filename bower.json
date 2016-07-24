@@ -1,6 +1,6 @@
 {
   "name": "jouley-song-loader-behavior",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "jouley-song-loader-behavior.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
