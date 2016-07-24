@@ -1,1 +1,9 @@
-<script src="../id3js/dist/id3.js"></script>
+<script>
+  // When running electron,
+  // return without importing id3
+  // (running with electron requires the node_module variant of id3)
+  if (window.process && window.process.title === 'npm') {
+    return;
+  }
+</script>
+<script src="../id3js/id3.min.js"></script>
